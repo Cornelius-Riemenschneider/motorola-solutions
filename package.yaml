@@ -24,7 +24,7 @@ dependencies:
 - servant-server
 - wai
 - warp
-- containers
+- postgresql-simple
 
 library:
   source-dirs: src
@@ -40,6 +40,7 @@ executables:
     dependencies:
     - base
     - motorola
+    - process
 
 tests:
   motorola-test:
@@ -56,3 +57,4 @@ tests:
     - hspec-wai
     - hspec-wai-json
     - aeson
+    - http-types

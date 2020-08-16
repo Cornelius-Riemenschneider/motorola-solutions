@@ -1,0 +1,12 @@
+version: '2.0'
+services:
+  haskell:
+    build: .
+    ports:
+    - "8080:8080"
+    links:
+    - database
+  database:
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
+    image: postgres:10

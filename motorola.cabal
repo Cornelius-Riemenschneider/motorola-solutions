@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ecaf06b468d31679f705e9ffae530adf74c9858d2c0161c14509901f01cea600
+-- hash: 53a6667df1ff94cf421040a03ddd9926d43183f803403bbcfd8cbfa3c932598a
 
 name:           motorola
 version:        0.1.0.0
@@ -34,7 +34,7 @@ library
   build-depends:
       aeson
     , base >=4.7 && <5
-    , containers
+    , postgresql-simple
     , servant-server
     , wai
     , warp
@@ -50,8 +50,9 @@ executable motorola-exe
   build-depends:
       aeson
     , base
-    , containers
     , motorola
+    , postgresql-simple
+    , process
     , servant-server
     , wai
     , warp
@@ -68,11 +69,12 @@ test-suite motorola-test
   build-depends:
       aeson
     , base
-    , containers
     , hspec
     , hspec-wai
     , hspec-wai-json
+    , http-types
     , motorola
+    , postgresql-simple
     , servant-server
     , wai
     , warp
